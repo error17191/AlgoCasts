@@ -8,6 +8,13 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+const reverseString = require('../reversestring');
+
+function reverseInt(n) {
+    // let sign = n >= 0 ? 1 : -1;
+    return Math.sign(n) * parseInt(reverseString(Math.abs(n).toString()));
+}
+
+reverseInt(-100);
 
 module.exports = reverseInt;
