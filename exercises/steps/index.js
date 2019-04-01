@@ -17,19 +17,33 @@
 //       '### '
 //       '####'
 
-function steps(n) {
-    for (let i = 1; i <= n; i++) {
-        let line = '';
-        for (let j = 1; j <= n; j++) {
-            if (j <= i) {
-                line += '#';
-            } else {
-                line += ' ';
-            }
-        }
-        console.log(line);
+function steps(n, row = 0, stair = '') {
+    if (n === row) {
+        return;
     }
+
+    if (n === stair.length) {
+        console.log(stair);
+        return steps(n, row + 1);
+    }
+
+    const add = stair.length <= row ? '#' : ' ';
+    steps(n, row, stair + add);
 }
+
+// function steps(n) {
+//     for (let i = 1; i <= n; i++) {
+//         let line = '';
+//         for (let j = 1; j <= n; j++) {
+//             if (j <= i) {
+//                 line += '#';
+//             } else {
+//                 line += ' ';
+//             }
+//         }
+//         console.log(line);
+//     }
+// }
 
 steps(3);
 
