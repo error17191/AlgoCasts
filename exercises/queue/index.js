@@ -18,7 +18,7 @@ class Queue {
     }
 
     remove(element) {
-        this.data.pop();
+        return this.data.pop();
     }
     log(){
         console.log(this.data);

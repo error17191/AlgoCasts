@@ -14,6 +14,10 @@ class Stack {
   peek() {
     return this.data[this.data.length - 1];
   }
+
+  log(){
+    console.log(this.data);
+  }
 }
 
 module.exports = Stack;
